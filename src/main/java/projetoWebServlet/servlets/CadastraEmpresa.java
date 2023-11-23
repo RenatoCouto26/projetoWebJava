@@ -24,6 +24,8 @@ public class CadastraEmpresa extends HttpServlet {
 		Empresa empresa = new Empresa(nomeDaEmpresa);
 		System.out.println("O nome da empresa é: "+ empresa.getNome());
 		
+		response.sendRedirect("/projetoWebServlet/mensagemCadastroEmpresaSucesso.html");
+		
 	}
 
 }

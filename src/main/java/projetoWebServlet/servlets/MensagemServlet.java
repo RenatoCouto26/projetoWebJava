@@ -3,6 +3,7 @@ package projetoWebServlet.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,11 @@ public class MensagemServlet extends HttpServlet {
 		System.out.println("mensagem enviada pelo servlet mensagem do projetoWebServlet");
 		String parametroNome = request.getParameter("nome");
 		System.out.println("O valor do parametro enviado na requisição é: "+ parametroNome);
+		
+		
+		//response.sendRedirect("/projetoWebServlet/cadastraEmpresa");
+		RequestDispatcher despachante = request.getRequestDispatcher("/cadastraEmpresa");
+		despachante.forward(request, response);
 	}
 
 }
